@@ -22,9 +22,9 @@ class _PasswordFieldState extends State<PasswordField> {
         hintText: 'Enter password',
         label: CustomText('Password'),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        suffix: IconButton(
-          onPressed: () => setState(() => _isObscure = !_isObscure),
-          icon: Icon(
+        suffix: InkWell(
+          onTap: () => setState(() => _isObscure = !_isObscure),
+          child: Icon(
             _isObscure ? Icons.visibility : Icons.visibility_off_outlined,
           ),
         ),

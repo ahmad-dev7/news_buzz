@@ -20,46 +20,59 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Padding(
         // horizontal padding of 20px
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          // Align vertically center
-          mainAxisAlignment: MainAxisAlignment.center,
-          // Align horizontally center
-          crossAxisAlignment: CrossAxisAlignment.center,
-          // Spacing between children
-          spacing: 20,
-          children: [
-            CustomText(
-              'Login to access NewsFeed',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+        child: Center(
+          // Wrapped with SingleChildScrollView to prevent overflow when keyboard appears
+          child: SingleChildScrollView(
+            child: Column(
+              // Align vertically center
+              mainAxisAlignment: MainAxisAlignment.center,
+              // Align horizontally center
+              crossAxisAlignment: CrossAxisAlignment.center,
+              // Spacing between children
+              spacing: 20,
+              children: [
+                CustomText(
+                  'Login now!',
+                  textAlign: TextAlign.center,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    spacing: 20,
+                    children: [
+                      EmailField(textController: _emailController),
+                      PasswordField(textController: _passwordController),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: FilledButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        // Here credentials can be sent to server for authentication
+                        debugPrint(_emailController.text);
+                        debugPrint(_passwordController.text);
+                      }
+                    },
+                    child: CustomText("Login"),
+                  ),
+                ),
+              ],
             ),
-            Form(
-              key: _formKey,
-              child: Column(
-                spacing: 20,
-                children: [
-                  EmailField(textController: _emailController),
-                  PasswordField(textController: _passwordController),
-                ],
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: FilledButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Here credentials can be sent to server for authentication
-                    debugPrint(_emailController.text);
-                    debugPrint(_passwordController.text);
-                  }
-                },
-                child: CustomText("Login"),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 }
