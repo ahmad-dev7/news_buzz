@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_buzz/components/custom_text.dart';
 import 'package:news_buzz/components/email_field.dart';
 import 'package:news_buzz/components/password_field.dart';
+import 'package:news_buzz/screens/news_feed.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -33,8 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 CustomText(
                   'Login now!',
-                  textAlign: TextAlign.center,
                   fontSize: 18,
+                  textAlign: TextAlign.center,
                   fontWeight: FontWeight.bold,
                 ),
                 Form(
@@ -53,9 +54,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: FilledButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // Here credentials can be sent to server for authentication
                         debugPrint(_emailController.text);
                         debugPrint(_passwordController.text);
+                        // Here credentials can be sent to server for authentication
+                        // For now we will navigate user directly
+                        // pushReplacement is used to remove the login page from the stack,
+                        // so that user won't be able to navigate here through back button
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const NewsFeed(),
+                          ),
+                        );
                       }
                     },
                     child: CustomText("Login"),
