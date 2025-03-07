@@ -35,6 +35,29 @@ This is my submission for the AiBuzz Flutter Developer Role Coding Assessment. T
 
 ---
 
+## Screenshots 📸
+
+<table>
+    <tr>
+        <td><img src="https://github.com/user-attachments/assets/6e032b16-de18-4a8b-852e-e29f9754619e" height="500">
+        </td>
+         <td><img src="https://github.com/user-attachments/assets/779225ff-f889-447d-8a06-70db990eba7b" height="500">
+        </td>
+        <td><img src="https://github.com/user-attachments/assets/382a6573-9316-4466-a902-4cd303320d5e" height="500">
+        </td>
+    </tr>   
+    <tr>
+        </td>
+        <td><img src="https://github.com/user-attachments/assets/82683d00-ac51-40fe-b359-5903ed2fbf79" height="500">
+        </td>
+        <td><img src="https://github.com/user-attachments/assets/b4455acb-a5cc-4a52-b0f0-d25238449d42" height="500">
+        </td>
+        <td><img src="https://github.com/user-attachments/assets/224cb3c3-d99e-440e-84ee-a9bdf36ba5ab" height="500">
+    </tr>
+</table>
+
+---
+
 ## How to Run? 🏃‍♂️
 
 1. Clone the repo:
@@ -53,12 +76,6 @@ This is my submission for the AiBuzz Flutter Developer Role Coding Assessment. T
    ```sh
    flutter run
    ```
-
----
-
-## Screenshots 📸
-
-(Add some screenshots here if you want)
 
 ---
 
