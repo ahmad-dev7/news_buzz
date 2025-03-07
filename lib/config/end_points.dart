@@ -5,6 +5,5 @@ class NewsFeedEndPoints {
   static final String apiKey = dotenv.env['NEWS_API_KEY'] ?? '';
 
   // Construct the base URL dynamically
-  static final String url =
-      'https://newsapi.org/v2/top-headlines?country=us&apiKey=$apiKey';
+  static final String baseUrl = 'https://newsapi.org/v2/everything?';
 }

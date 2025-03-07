@@ -14,10 +14,12 @@ dependencies:
 
   cupertino_icons: ^1.0.8 #CupertinoIcons default added
   http: ^1.3.0 #For fetching data from APO
-  cached_network_image: ^3.4.1 #For caching network image
   shimmer: ^3.0.0 #For shimmer effect while data is loading
   flutter_dotenv: ^5.2.1 #For loading environment variables from .env file
   flutter_bloc: ^9.1.0 #For state management
+  intl: ^0.20.2 #For date and time formatting
+  webview_flutter: ^4.10.0 #For showing source in webview
+  fancy_shimmer_image: ^2.0.3 #For caching Image and show shimmer while loading
 
 dev_dependencies:
   flutter_test:

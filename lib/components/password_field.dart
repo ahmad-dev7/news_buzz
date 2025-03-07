@@ -17,6 +17,7 @@ class _PasswordFieldState extends State<PasswordField> {
     return TextFormField(
       controller: widget.textController,
       validator: kPasswordValidator,
+      keyboardType: TextInputType.visiblePassword,
       obscureText: _isObscure,
       decoration: InputDecoration(
         hintText: 'Enter password',

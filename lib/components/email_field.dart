@@ -11,6 +11,7 @@ class EmailField extends StatelessWidget {
     return TextFormField(
       controller: textController,
       validator: kEmailValidator,
+      keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         hintText: 'Enter email Id',
         label: CustomText('Email'),
